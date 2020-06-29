@@ -1,10 +1,14 @@
 require 'pry'
 
 class Lineup
+    attr_reader :arrs
 
-    @all = []
+    @@all = []
 
-    def initialize(arr,arr.length, wallet=0)
+    def initialize(arr, promoter)
+        @arr = arr
+        @wallet = 0
+        @promoter = promoter
         @@all << self
     end
 

@@ -16,14 +16,14 @@ class Concert
         @@all << self
     end
 
-    def ticket_sales(attendee_count)
-        if attendee_count > @est_attendees
-            @est_attendees = attendee_count 
-        end
-        total = attendee_count * @price
-        payout = total - (total * 10/ 100)
-        binding.pry 
-    end
+    # def ticket_sales(attendee_count)
+    #     if attendee_count > @est_attendees
+    #         @est_attendees = attendee_count 
+    #     end
+    #     total = attendee_count * @price
+    #     payout = total - (total * 10/ 100)
+    #     binding.pry 
+    # end
 
     def promoter_pay
         promoter.wallet += payout

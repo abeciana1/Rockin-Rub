@@ -2,10 +2,12 @@ require 'pry'
 require_relative './promoter.rb'
 require_relative './lineup.rb'
 require_relative './concert.rb'
-
 alex = Promoter.new("Alex", 25, 100)
 alex.book_lineup(["bodgea", "public practice"])
 
+
+jeff = Promoter.new("Jeff", 27, 30)
+jeff.book_lineup(["beatles", "rolling stones"])
 
 rock = ["beatles", "rolling stones"]
 #create new lineup
@@ -27,5 +29,6 @@ puts party = Concert.new("Alphaville", "Friday", 100, 10, "Alex")
 
 # alex.book_concert("Alphaville", "Friday", 5, 10)
 
+puts alex.lineups
 
 binding.pry

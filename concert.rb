@@ -17,21 +17,23 @@ class Concert
     end
 
     def ticket_sales(attendee_count)
-        @est_attendees = attendee_count if attendee_count > @est_attendees
-        total = @attendees * @price
-        payout = total - (total * 10/100)
+        if attendee_count > @est_attendees
+            @est_attendees = attendee_count 
+        end
+        total = attendee_count * @price
+        payout = total - (total * 10/ 100)
+        binding.pry 
+    end
+
+    def promoter_pay
+        promoter.wallet += payout
     end
 
     def promoter
-        Promoter.all.map do  |promoter|
+        Promoter.all.select do  |promoter|
             promoter.name == @promoter
-            #binding.pry
+            binding.pry
         end
-    end
-
-    def pay_promoter
-        promoter.wallet += self.ticket_sales
-        #binding.pry
     end
 
     def self.all

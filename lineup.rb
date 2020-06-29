@@ -9,13 +9,14 @@ class Lineup
     def initialize(arr, promoter)
         @arr = arr
         @wallet = 0
-        @promoter = []
+        @promoter = promoter
         @@all << self
     end
 
     def promoters
         Promoter.all.select do |promoter_instance|
             promoter_instance.name
+            binding.pry
         end
     end
 

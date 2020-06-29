@@ -11,7 +11,7 @@ class Promoter
         @age = age
         @wallet = wallet
         @concert_list = []
-        # @lineup_list = []
+        @lineup_list = []
         @@all << self
     end
 
@@ -30,8 +30,8 @@ class Promoter
     end
 
     def lineups
-        Lineup.all.map do |lineup|
-            lineup.promoters == self 
+        Lineup.all.filter do |lineup|
+            self.lineup_list << lineup.promoters
         end
     end
 

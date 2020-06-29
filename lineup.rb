@@ -16,7 +16,7 @@ class Lineup
     def promoters
         Promoter.all.select do |promoter_instance|
             promoter_instance.name
-            binding.pry
+            # binding.pry
         end
     end
 

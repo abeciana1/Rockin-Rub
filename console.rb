@@ -9,7 +9,7 @@ alex.book_lineup(["bodgea", "public practice"])
 jeff = Promoter.new("Jeff", 27, 30)
 jeff.book_lineup(["beatles", "rolling stones"])
 
-rock = ["beatles", "rolling stones"]
+# rock = ["beatles", "rolling stones"]
 #create new lineup
 # puts lineup1 = Lineup.new(rock, "Alex")
 
@@ -23,12 +23,12 @@ rock = ["beatles", "rolling stones"]
 # puts Lineup.all
 
 # new concert
-puts party = Concert.new("Alphaville", "Friday", 100, 10, "Alex")
+# puts party = Concert.new("Alphaville", "Friday", 100, 10, "Alex")
 
 # alex.book_concert("Alphaville", "Friday", 5, 10)
 
 # alex.book_concert("Alphaville", "Friday", 5, 10)
 
-puts alex.lineups
+alex.lineups
 
-binding.pry
+p jeff.lineups

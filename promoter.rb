@@ -31,7 +31,8 @@ class Promoter
 
     def lineups
         Lineup.all.filter do |lineup|
-            self.lineup_list << lineup.promoters
+            self.lineup_list << lineup.arr
+            # binding.pry
         end
     end
 

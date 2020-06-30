@@ -10,6 +10,7 @@ class Lineup
         @arr = arr
         @wallet = 0
         @promoter = promoter
+        #binding.pry
         @concert = []
         @@all << self
     end
@@ -17,13 +18,23 @@ class Lineup
     def concerts
         Concert.all.select do |concert_instance|
             @concert << concert_instance
+            # binding.pry
+        end
+    end
+
+    def promoter
+        self.concerts.select do |concert_instance|
+            if concert_instance.promoter == @promoter
+                return @promoter
+            end
+            # binding.pry
         end
     end
 
     def lineup_pay
-        Concert.all.select do |concert_instance|
+        self.concerts.select do |concert_instance|
            @wallet += concert_instance.payout
-            # binding.pry
+            binding.pry
         end
     end
 

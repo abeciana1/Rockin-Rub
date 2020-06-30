@@ -4,15 +4,18 @@ Practicing Ruby Classes and Methods with concert booking model with promoters, l
 
 ## Promoter
 * Initializes with name, wallet = 0, and age
-* Promoters should know all lineups and concerts
-* Promoter should know all instances 
+* Promoter should know all instances
+* Promoter has access to many concerts
+* Promoter has access to many lineups through concerts
 
 ## Lineup
-* Initializes with Array of band names, array.length, wallet= 0, and the promoter instance they're working with
-* Lineup should know all other lineups
-* Lineup should know promoter
+* Initializes with an Array of band names, wallet= 0, and the concert instance they're working with
+* Lineup should know all other instances of the class
+* Lineup belongs to one concert
 
 ## Concert
-* Initializes with venue name, wallet, day, attendees, price of concert(default to 0 for free events)
-* Concerts should know all other concerts
-* Concert should know promoter and lineup
+* Initializes with venue name, day, estimated attendees, price of concert(default to 0 for free events), payout (also defaulted to 0 for free events) and promoter.
+* Concerts should know all other instances of the class
+* Concert should know the promoter
+* A concert belongs to the promoter
+* SSOT

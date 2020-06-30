@@ -6,11 +6,11 @@ class Concert
 
     @@all = []
 
-    def initialize(venue_name, day, est_attendees=nil, price=0, promoter)
+    def initialize(venue_name, day, est_attendees=nil, price=0, payout=0, promoter)
         @venue_name = venue_name
         @day = day
         @est_attendees = est_attendees
-        @payout = 0
+        @payout = payout
         @price = price
         @promoter = promoter
         @@all << self

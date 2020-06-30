@@ -22,8 +22,8 @@ class Lineup
 
     def lineup_pay
         Concert.all.select do |concert_instance|
-            (concert_instance.payout) / self.arr.length
-            binding.pry
+           @wallet += concert_instance.payout
+            # binding.pry
         end
     end
 

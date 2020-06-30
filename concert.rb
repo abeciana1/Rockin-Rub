@@ -1,38 +1,38 @@
 require 'pry'
 
 class Concert
-    attr_reader :venue_name, :promoter, :lineup
-    attr_accessor :attendees, :price, :day
+    attr_reader :venue_name, :promoter, :payout
+    attr_accessor :est_attendees, :price, :day
 
     @@all = []
 
-    def initialize(venue_name, day, est_attendees=0, price=0, promoter, lineup)
+    def initialize(venue_name, day, est_attendees=nil, price=0, promoter)
         @venue_name = venue_name
         @day = day
         @est_attendees = est_attendees
+        @payout = 0
         @price = price
         @promoter = promoter
-        @lineup = lineup
         @@all << self
     end
 
-    # def ticket_sales(attendee_count)
-    #     if attendee_count > @est_attendees
-    #         @est_attendees = attendee_count 
-    #     end
-    #     total = attendee_count * @price
-    #     payout = total - (total * 10/ 100)
-    #     binding.pry 
-    # end
+    def ticket_sales(attendee_count)
+        if attendee_count > @est_attendees
+            @est_attendees = attendee_count 
+        end
+        total = attendee_count * @price
+        @payout = total - (total * 10/ 100)
+    end
 
     def promoter_pay
-        promoter.wallet += payout
+        @promoter.wallet += @payout
+        # binding.pry
     end
 
     def promoter
-        Promoter.all.select do  |promoter|
-            promoter.name == @promoter
-            binding.pry
+        Promoter.all.select do  |promoter_instance|
+            promoter_instance == @promoter
+            # binding.pry
         end
     end
 

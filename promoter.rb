@@ -2,7 +2,7 @@ require 'pry'
 
 class Promoter
     attr_reader :name, :age
-    attr_accessor :wallet, :lineup_list, :concert_list
+    attr_accessor :wallet
 
     @@all = []
 
@@ -10,8 +10,6 @@ class Promoter
         @name = name
         @age = age
         @wallet = wallet
-        @concert_list = []
-        @lineup_list = []
         @@all << self
     end
 
@@ -21,19 +19,6 @@ class Promoter
 
     def book_concert(venue_name, day, est_attendees, price)
         Concert.new(venue_name, day, est_attendees, price, self)
-    end
-
-    def concerts
-        Concert.all.select do |concert|
-            concert_list << concert
-        end
-    end
-
-    def lineups
-        Lineup.all.filter do |lineup|
-            self.lineup_list << lineup.arr
-            # binding.pry
-        end
     end
 
     def self.all

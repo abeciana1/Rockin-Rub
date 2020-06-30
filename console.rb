@@ -2,16 +2,22 @@ require 'pry'
 require_relative './promoter.rb'
 require_relative './lineup.rb'
 require_relative './concert.rb'
+
 alex = Promoter.new("Alex", 25, 100)
 alex.book_lineup(["bodgea", "public practice"])
 
+alex.book_concert("Alphaville", "Friday", 5, 10)
 
-jeff = Promoter.new("Jeff", 27, 30)
-jeff.book_lineup(["beatles", "rolling stones"])
+alex.book_concert("Alphaville", "Friday", 5, 10).promoter
+
+
+puts jeff = Promoter.new("Jeff", 27, 30)
+puts jeff_lineup = jeff.book_lineup(["beatles", "rolling stones"])
 
 # rock = ["beatles", "rolling stones"]
 #create new lineup
-# puts lineup1 = Lineup.new(rock, "Alex")
+# puts 
+lineup1 = Lineup.new(["beatles", "rolling stones"], "Alex")
 
 # #new promoter
 # puts alex = Promoter.new("Alex", 25, 100)
@@ -25,10 +31,11 @@ jeff.book_lineup(["beatles", "rolling stones"])
 # new concert
 # puts party = Concert.new("Alphaville", "Friday", 100, 10, "Alex")
 
-# alex.book_concert("Alphaville", "Friday", 5, 10)
 
-# alex.book_concert("Alphaville", "Friday", 5, 10)
 
-alex.lineups
+puts jeff_party = jeff.book_concert("CBGB", "Friday", 30, 30)
 
-p jeff.lineups
+puts jeff_party.ticket_sales(500)
+puts jeff_party.promoter_pay
+
+puts jeff_lineup.lineup_pay
